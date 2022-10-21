@@ -75,6 +75,7 @@ function App() {
         ))}
       </div>
       <p>Turns: {turns}</p>
+      <p> ™ Vivy ®</p>
     </div>
   );
 }
