@@ -3,12 +3,12 @@ import './App.css';
 import SingleCard from './components/singlecard';
 
 const cardImages = [
-  { src: '/img/helmet-1.png', matched: false },
-  { src: '/img/potion-1.png', matched: false },
-  { src: '/img/ring-1.png', matched: false },
-  { src: '/img/scroll-1.png', matched: false },
-  { src: '/img/shield-1.png', matched: false },
-  { src: '/img/sword-1.png', matched: false },
+  { src: `${process.env.PUBLIC_URL}/img/helmet-1.png`, matched: false },
+  { src: `${process.env.PUBLIC_URL}/img/potion-1.png`, matched: false },
+  { src: `${process.env.PUBLIC_URL}/img/ring-1.png`, matched: false },
+  { src: `${process.env.PUBLIC_URL}/img/scroll-1.png`, matched: false },
+  { src: `${process.env.PUBLIC_URL}/img/shield-1.png`, matched: false },
+  { src: `${process.env.PUBLIC_URL}/img/sword-1.png`, matched: false },
 ];
 
 function App() {
@@ -35,7 +35,7 @@ function App() {
   useEffect(() => {
     if (choiceOne && choiceTwo) {
       setDisabled(true)
-       
+
       if (choiceOne.src === choiceTwo.src) {
         setCards((prevCards) => {
           return prevCards.map((card) => {
@@ -71,7 +71,7 @@ function App() {
 
       <div className='card-grid'>
         {cards.map((card) => (
-          <SingleCard key={card.id} card={card} handleChoice={handleChoice} flipped={card === choiceOne || card === choiceTwo || card.matched} disabled={disabled}/>
+          <SingleCard key={card.id} card={card} handleChoice={handleChoice} flipped={card === choiceOne || card === choiceTwo || card.matched} disabled={disabled} />
         ))}
       </div>
       <p>Turns: {turns}</p>
